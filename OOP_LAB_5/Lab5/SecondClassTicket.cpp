@@ -79,3 +79,12 @@ char * SecondClassTicket::GetInformation(char * info) const
 	return info;
 }
 
+int SecondClassTicket::IsCorrect(int place)
+{
+	if (place > 0 && place < 53)
+	{
+		return 1;
+	}
+	return 0;
+}
+

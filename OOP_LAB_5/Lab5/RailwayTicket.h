@@ -14,4 +14,5 @@ public:
 	void SetCarriage(int);
 	Human GetPassenger() const;
 	const int GetCarriage() const;
+	virtual int IsCorrect(int) = 0;
 };

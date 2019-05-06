@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <stdlib.h>
-#define K 18
+#define K 9
 using namespace std;
 
 void  SortBySurname(SecondClassTicket items[], int count);

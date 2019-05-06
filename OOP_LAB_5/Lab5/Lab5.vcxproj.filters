@@ -27,6 +27,9 @@
     <ClCompile Include="SecondClassTicket.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="LuxClassTicket.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Human.h">
@@ -36,6 +39,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="SecondClassTicket.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxClassTicket.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
