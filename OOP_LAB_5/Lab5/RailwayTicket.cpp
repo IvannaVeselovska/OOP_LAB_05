@@ -1,12 +1,12 @@
 #include "RailwayTicket.h"
 #include <string.h>
-#include "Human.h"
+#include "Person.h"
 
 RailwayTicket::RailwayTicket()
 {
 }
 
-RailwayTicket::RailwayTicket(Human passenger, char* carriage, int place, double prise)
+RailwayTicket::RailwayTicket(Person passenger, char* carriage, int place, double prise)
 {
 	SetPassenger(&passenger);
 	SetCarriage(carriage);
@@ -18,9 +18,9 @@ RailwayTicket::~RailwayTicket()
 {
 }
 
-void RailwayTicket::SetPassenger(Human * passenger)
+void RailwayTicket::SetPassenger(Person * passenger)
 {
-	this->passenger = Human(passenger);
+	this->passenger = Person(passenger);
 }
 
 void RailwayTicket::SetCarriage(char* carriage)
@@ -28,7 +28,7 @@ void RailwayTicket::SetCarriage(char* carriage)
 	strcpy(this->carriage, carriage);
 }
 
-Human RailwayTicket::GetPassenger() const
+Person RailwayTicket::GetPassenger() const
 {
 	return passenger;
 }

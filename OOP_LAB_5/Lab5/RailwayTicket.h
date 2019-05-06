@@ -1,20 +1,20 @@
 #pragma once
-#include "Human.h"
+#include "Person.h"
 
 class RailwayTicket
 {
 private:
-	Human passenger;
+	Person passenger;
 	char carriage[10];
 	int place;
 	double prise;
 public:
 	RailwayTicket();
-	RailwayTicket(Human, char*, int , double);
+	RailwayTicket(Person, char*, int , double);
 	~RailwayTicket();
-	void SetPassenger(Human *);
+	void SetPassenger(Person *);
 	void SetCarriage(char*);
-	Human GetPassenger() const;
+	Person GetPassenger() const;
 	const char* GetCarriage() const;
 	void SetPlañe(int);
 	void SetPrise(double);

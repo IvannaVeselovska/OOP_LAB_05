@@ -1,17 +1,17 @@
 #pragma once
 #define _CRT_SECURE_NO_WARNINGS
 
-class Human
+class Person
 {
 private:
 	char name[15];
 	char surname[20];
 	char e_mail[50];
 public:
-	Human();
-	Human(char*, char*, char*);
-	Human(Human*);
-	~Human();
+	Person();
+	Person(char*, char*, char*);
+	Person(Person*);
+	~Person();
 	void SetName(char*);
 	void SetSurname(char*);
 	void SetEmail(char*);

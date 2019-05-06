@@ -1,19 +1,19 @@
-#include "Human.h"
+#include "Person.h"
 #include <string.h>
 
 
-Human::Human()
+Person::Person()
 {
 }
 
-Human::Human(char *name, char * surname, char * e_mail)
+Person::Person(char *name, char * surname, char * e_mail)
 {
 	SetName(name);
 	SetSurname(surname);
 	SetEmail(e_mail);
 }
 
-Human::Human(Human * h)
+Person::Person(Person * h)
 {
 	char  f[15];
 	strcpy(f, h->GetName());
@@ -27,37 +27,37 @@ Human::Human(Human * h)
 }
 
 
-Human::~Human()
+Person::~Person()
 {
 }
 
-void Human::SetName(char * nam)
+void Person::SetName(char * nam)
 {
 	strcpy(this->name, nam);
 }
 
-void Human::SetSurname(char *sur)
+void Person::SetSurname(char *sur)
 {
 	strcpy(this->surname, sur);
 }
 
 
-void Human::SetEmail(char *email)
+void Person::SetEmail(char *email)
 {
 	strcpy(this->e_mail, email);
 }
 
-const char * Human::GetName() const
+const char * Person::GetName() const
 {
 	return name;
 }
 
-const char * Human::GetSurname() const
+const char * Person::GetSurname() const
 {
 	return surname;
 }
 
-const char * Human::GetEmail() const
+const char * Person::GetEmail() const
 {
 	return e_mail;
 }

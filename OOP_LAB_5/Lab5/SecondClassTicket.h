@@ -6,7 +6,7 @@ class SecondClassTicket :
 
 public:
 	SecondClassTicket();
-	SecondClassTicket(Human, char*, int, double);
+	SecondClassTicket(Person, char*, int, double);
 	SecondClassTicket(SecondClassTicket *);
 	~SecondClassTicket();
 	char* GetInformation(char*) const override;

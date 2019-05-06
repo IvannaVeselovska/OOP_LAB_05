@@ -7,7 +7,7 @@ SecondClassTicket::SecondClassTicket()
 {
 }
 
-SecondClassTicket::SecondClassTicket(Human passenger, char* carriage, int place, double prise) :RailwayTicket(passenger, carriage, place, prise)
+SecondClassTicket::SecondClassTicket(Person passenger, char* carriage, int place, double prise) :RailwayTicket(passenger, carriage, place, prise)
 {
 
 }

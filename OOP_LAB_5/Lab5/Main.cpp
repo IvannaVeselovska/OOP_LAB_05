@@ -1,27 +1,19 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include "Human.h"
+#include "Person.h"
 #include "SecondClassTicket.h"
+#include "LuxClassTicket.h"
 #include <stdio.h>
 #include <iostream>
 #include <stdlib.h>
-#define K 9
+#define K 4
 using namespace std;
 
-void  SortBySurname(SecondClassTicket items[], int count);
-void qs_struct(SecondClassTicket items[], int left, int right);
+void  SortBySurname(RailwayTicket* items[], int count);
+void qs_struct(RailwayTicket* items[], int left, int right);
 
 int main()
 {
-	/*char a[] = "vb";
-	char b[] = "ttt";
-	char c[] = "hgfd";
-	char car[] = "4d";
-	Human p(a, b, c);
-	SecondClassTicket tick(p, car, 38, 70.56);
-	char info[20];
-	tick.GetInformation(info);
-	puts(info);
-	SecondClassTicket tics[K];
+	RailwayTicket** tickets = new RailwayTicket*[K];
 	for (int i = 0; i < K; i++)
 	{
 		printf("\ninput name");
@@ -31,7 +23,7 @@ int main()
 		scanf("%s", b1);
 		printf("\ninput e-mail");
 		scanf("%s", c1);
-		Human g(a1, b1, c1);
+		Person p(a1, b1, c1);
 		char car1[10];
 		int  pl;
 		double pr;
@@ -41,40 +33,46 @@ int main()
 		scanf("%d", &pl);
 		printf("\ninput prise");
 		scanf("%lf", &pr);
-		tics[i] = SecondClassTicket(g, car1, pl, pr);
+		if (i % 2)
+		{
+			tickets[i] = new SecondClassTicket(p, car1, pl, pr);
+		}
+		else {
+			tickets[i] = new LuxClassTicket(p, car1, pl, pr);
+		}
 	}
-	SortBySurname(tics, K);
+	SortBySurname(tickets, K);
 	for (int i = 0; i < K; i++)
 	{
 		fflush(stdin);
 		printf("\n================**********************++++++++++++++++++========++++++++++++++++++**********************================");
-		printf("\nsurname - %s", tics[i].GetPassenger().GetSurname());
-		printf("\nname \t- %s", tics[i].GetPassenger().GetName());
-		printf("\ne-mail \t- %s", tics[i].GetPassenger().GetEmail());
-		printf("\ncarriage \t- %d", tics[i].GetCarriage());
-		printf("\nplace \t- %d", tics[i].GetPlace());
-		printf("\nprise \t- %lf", tics[i].GetPrise());
-	}*/
+		printf("\nsurname - %s", tickets[i]->GetPassenger().GetSurname());
+		printf("\nname \t- %s", tickets[i]->GetPassenger().GetName());
+		printf("\ne-mail \t- %s", tickets[i]->GetPassenger().GetEmail());
+		printf("\ncarriage \t- %s", tickets[i]->GetCarriage());
+		printf("\nplace \t- %d", tickets[i]->GetPlace());
+		printf("\nprise \t- %lf", tickets[i]->GetPrise());
+	}
 	system("pause");
 	return 0;
 }
 
-void  SortBySurname(SecondClassTicket items[], int count)
+void  SortBySurname(RailwayTicket* items[], int count)
 {
 	qs_struct(items, 0, count - 1);
 }
 
-void qs_struct(SecondClassTicket items[], int left, int right)
+void qs_struct(RailwayTicket* items[], int left, int right)
 {
 	register int i, j;
 	const char* x;
-	SecondClassTicket temp;
+	RailwayTicket* temp;
 	i = left; j = right + 1;
 
-	x = items[(left + right) / 2].GetPassenger().GetSurname();
+	x = items[(left + right) / 2]->GetPassenger().GetSurname();
 	do {
-		while ((strcmp(items[i].GetPassenger().GetSurname(), x) < 0) && (i < right)) i++;
-		while ((strcmp(items[j].GetPassenger().GetSurname(), x) > 0) && (j > left)) j--;
+		while ((strcmp(items[i]->GetPassenger().GetSurname(), x) < 0) && (i < right)) i++;
+		while ((strcmp(items[j]->GetPassenger().GetSurname(), x) > 0) && (j > left)) j--;
 		if (i <= j) {
 			temp = items[i];
 			items[i] = items[j];

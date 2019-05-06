@@ -6,7 +6,7 @@ LuxClassTicket::LuxClassTicket()
 {
 }
 
-LuxClassTicket::LuxClassTicket(Human passenger, char * carriage, int place, double prise) :RailwayTicket(passenger, carriage, place, prise)
+LuxClassTicket::LuxClassTicket(Person passenger, char * carriage, int place, double prise) :RailwayTicket(passenger, carriage, place, prise)
 {
 }
 
