@@ -12,11 +12,12 @@ void qs_struct(SecondClassTicket items[], int left, int right);
 
 int main()
 {
-	char a[] = "vb";
+	/*char a[] = "vb";
 	char b[] = "ttt";
 	char c[] = "hgfd";
+	char car[] = "4d";
 	Human p(a, b, c);
-	SecondClassTicket tick(p, 4, 38, 70.56);
+	SecondClassTicket tick(p, car, 38, 70.56);
 	char info[20];
 	tick.GetInformation(info);
 	puts(info);
@@ -31,15 +32,16 @@ int main()
 		printf("\ninput e-mail");
 		scanf("%s", c1);
 		Human g(a1, b1, c1);
-		int car, pl;
+		char car1[10];
+		int  pl;
 		double pr;
 		printf("\ninput carriage");
-		scanf("%d", &car);
+		scanf("%s", &car1);
 		printf("\ninput place");
 		scanf("%d", &pl);
 		printf("\ninput prise");
 		scanf("%lf", &pr);
-		tics[i] = SecondClassTicket(g, car, pl, pr);
+		tics[i] = SecondClassTicket(g, car1, pl, pr);
 	}
 	SortBySurname(tics, K);
 	for (int i = 0; i < K; i++)
@@ -50,9 +52,9 @@ int main()
 		printf("\nname \t- %s", tics[i].GetPassenger().GetName());
 		printf("\ne-mail \t- %s", tics[i].GetPassenger().GetEmail());
 		printf("\ncarriage \t- %d", tics[i].GetCarriage());
-		printf("\nplace \t- %d", tics[i].GetPlañe());
+		printf("\nplace \t- %d", tics[i].GetPlace());
 		printf("\nprise \t- %lf", tics[i].GetPrise());
-	}
+	}*/
 	system("pause");
 	return 0;
 }

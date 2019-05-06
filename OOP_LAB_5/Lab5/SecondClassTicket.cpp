@@ -1,28 +1,22 @@
 #include "SecondClassTicket.h"
 #include <string.h>
-#include <string>
-#include <conio.h>
 
 using namespace std;
-
 
 SecondClassTicket::SecondClassTicket()
 {
 }
 
-SecondClassTicket::SecondClassTicket(Human passenger, int carriage, int place, double prise)
+SecondClassTicket::SecondClassTicket(Human passenger, char* carriage, int place, double prise) :RailwayTicket(passenger, carriage, place, prise)
 {
-	SetPassenger(&passenger);
-	SetCarriage(carriage);
-	SetPlañe(place);
-	SetPrise(prise);
+
 }
 
 SecondClassTicket::SecondClassTicket(SecondClassTicket * sourse)
 {
 	SetPassenger(&sourse->GetPassenger());
-	SetCarriage(sourse->GetCarriage());
-	SetPlañe(sourse->GetPlañe());
+	SetCarriage((char*)sourse->GetCarriage());
+	SetPlañe(sourse->GetPlace());
 	SetPrise(sourse->GetPrise());
 }
 
@@ -31,32 +25,11 @@ SecondClassTicket::~SecondClassTicket()
 {
 }
 
-void SecondClassTicket::SetPlañe(int place)
-{
-	if (prise > 0 && prise < 53)
-	{
-		this->place = place;
-	}
-}
 
-void SecondClassTicket::SetPrise(double prise)
-{
-	this->prise = prise;
-}
-
-const int SecondClassTicket::GetPlañe() const
-{
-	return this->place;
-}
-
-const double SecondClassTicket::GetPrise() const
-{
-	return this->prise;
-}
 
 char * SecondClassTicket::GetInformation(char * info) const
 {
-	if (this->place < 37)
+	if (this->GetPlace() < 37)
 	{
 		char a[] = "average ";
 		strcpy(info, a);
@@ -66,7 +39,7 @@ char * SecondClassTicket::GetInformation(char * info) const
 		char a[] = "lateral ";
 		strcpy(info, a);
 	}
-	if (this->place % 2)
+	if (this->GetPlace() % 2)
 	{
 		char a[] = "lower place";
 		strcat(info, a);
@@ -81,7 +54,7 @@ char * SecondClassTicket::GetInformation(char * info) const
 
 int SecondClassTicket::IsCorrect(int place)
 {
-	if (place > 0 && place < 53)
+	if (place > 0 && place < 55)
 	{
 		return 1;
 	}

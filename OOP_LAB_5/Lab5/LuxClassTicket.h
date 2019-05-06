@@ -3,19 +3,12 @@
 class LuxClassTicket :
 	public RailwayTicket
 {
-private:
-	int place;
-	double prise;
 public:
 	LuxClassTicket();
-	LuxClassTicket(Human, int, int, double);
+	LuxClassTicket(Human, char*, int, double);
 	LuxClassTicket(LuxClassTicket *);
 	~LuxClassTicket();
-	void SetPlañe(int);
-	void SetPrise(double);
-	const int GetPlañe() const;
-	const double GetPrise() const;
-	char* GetInformation(char*) const;
+	char* GetInformation(char*) const override;
 	int IsCorrect(int) override;
 };
 

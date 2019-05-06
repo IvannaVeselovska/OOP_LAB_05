@@ -1,9 +1,21 @@
 #include "LuxClassTicket.h"
-
+#include <string.h>
 
 
 LuxClassTicket::LuxClassTicket()
 {
+}
+
+LuxClassTicket::LuxClassTicket(Human passenger, char * carriage, int place, double prise) :RailwayTicket(passenger, carriage, place, prise)
+{
+}
+
+LuxClassTicket::LuxClassTicket(LuxClassTicket * sourse)
+{
+	SetPassenger(&sourse->GetPassenger());
+	SetCarriage((char*)sourse->GetCarriage());
+	SetPlañe(sourse->GetPlace());
+	SetPrise(sourse->GetPrise());
 }
 
 
@@ -11,27 +23,13 @@ LuxClassTicket::~LuxClassTicket()
 {
 }
 
-void LuxClassTicket::SetPlañe(int place)
+char * LuxClassTicket::GetInformation(char * info) const
 {
-	if (IsCorrect(place)) {
-		this->place = place;
-	}
+	char a[] = "This is luxury ticket";
+	strcpy(info, a);
+	return info;
 }
 
-void LuxClassTicket::SetPrise(double prise)
-{
-	this->prise = prise;
-}
-
-const int LuxClassTicket::GetPlañe() const
-{
-	return this->place;
-}
-
-const double LuxClassTicket::GetPrise() const
-{
-	return this->prise;
-}
 
 int LuxClassTicket::IsCorrect(int place)
 {
